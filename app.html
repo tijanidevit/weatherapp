@@ -463,6 +463,12 @@
           <option value="101329">Zungeru</option>
           <option value="101330">Zuru</option>
         </select>
+
+        <div class="loader d-none">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
       <div class="d-none" id="result">
         <div class="card card-1">
@@ -532,7 +538,11 @@
       url: url,
       type: "get",
       data: {},
+      beforeSend: function () {
+        enableLoader();
+      },
       success: function (data) {
+        disableLoader();
         setTodayData(data);
         getHourlyData(data.hour_hour);
         getDailyData(data);
@@ -642,6 +652,15 @@
     $("#result").fadeIn(5000);
   }
 
+  function enableLoader() {
+    $(".loader").removeClass("d-none");
+    $("#selector").addClass("d-none");
+  }
+
+  function disableLoader() {
+    $(".loader").addClass("d-none");
+    $("#selector").removeClass("d-none");
+  }
   $("#forcastBtn").click(function () {
     $("#result").fadeOut();
     $("#result").addClass("d-none");
@@ -650,12 +669,3 @@
   });
 </script>
 <script src="js/chart.js"></script>
-<script>
-  nextHourChart();
-  function nextHourChart() {
-    // $("#nextHour").remove();
-    // $("#nextHourContainer").append(
-    //   '<canvas id="nextHour" width="200" height="200"><canvas>'
-    // );
-  }
-</script>
