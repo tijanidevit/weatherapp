@@ -15,21 +15,37 @@
     <?php include_once 'components/head.php' ?>
   </head>
 
-<body 
-
+<body
   <?php if (isset( $_SESSION['weather_user'])) :?>
     onload=getIndexTodayForecast(<?php echo $code ?>)
   <?php else: ?>
     onload=getIndexTodayForecast()
-  <?php endif ?>
-
-  
-  
+  <?php endif ?>  
 >
   
 <?php include_once 'components/header.php' ?>
 <section class="float-start w-100 banner-part1">
       <div class="container">
+        
+      <div class="text-center my-3">
+                <div class="spinner" id="spinner">
+                    <span
+                        class="spinner-grow spinner-grow-lg"
+                        role="status"
+                        aria-hidden="true"
+                    ></span>
+                    <span
+                        class="spinner-grow spinner-grow-lg"
+                        role="status"
+                        aria-hidden="true"
+                    ></span>
+                    <span
+                        class="spinner-grow spinner-grow-lg"
+                        role="status"
+                        aria-hidden="true"
+                    ></span>
+                </div>
+            </div>
             <div class="row row-cols-1 row-cols-md-2 top-part-banner1">
                 <div class="col">
                   <div class="partly_cloudy mainIcon">

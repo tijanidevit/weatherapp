@@ -8,8 +8,14 @@ const getCurrentWeatherData = async (code) => {
     url: url,
     type: "get",
     data: {},
+    beforeSend: function () {
+      $("#spinner").removeClass("d-none");
+    },
     success: function (data) {
       return data;
+    },
+    complete: function () {
+      $("#spinner").addClass("d-none");
     },
   });
 
@@ -148,8 +154,14 @@ function getDailyData(days) {
   });
 }
 
-$("#SelectLoc").click(function () {
-  console.log("'object' :>> ", "object");
+$(".SelectLoc").change(function () {
   var code = $(this).val();
-  getIndexTodayForecast(code);
+  $("#spinner").show();
+  $("#resultArea").hide();
+  setTimeout(() => {
+    getIndexTodayForecast(code);
+    $("#resultArea").show();
+  }, 0000);
+
+  // $("#spinner").addClass("d-none");
 });

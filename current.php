@@ -49,7 +49,7 @@
           <div class="container">
              
             <form method="post" id="selector">                
-                <select class="form-control" id="SelectLoc">
+                <select class="form-control SelectLoc" id="SelectLoc">
                     <option value="" selected="">Select a city</option>
                     <option value="100891">Aba</option>
                     <option value="100892">Abak</option>
@@ -496,9 +496,29 @@
                     <option value="101330">Zuru</option>
                 </select>
             </form>
+
+            <div class="text-center my-3">
+                <div class="spinner" id="spinner">
+                    <span
+                        class="spinner-grow spinner-grow-lg"
+                        role="status"
+                        aria-hidden="true"
+                    ></span>
+                    <span
+                        class="spinner-grow spinner-grow-lg"
+                        role="status"
+                        aria-hidden="true"
+                    ></span>
+                    <span
+                        class="spinner-grow spinner-grow-lg"
+                        role="status"
+                        aria-hidden="true"
+                    ></span>
+                </div>
+            </div>
           </div>
 
-          <div class="dya-mn mb-5">
+          <div class="dya-mn mb-5" id="resultArea">
             <div class="container">
                 
               <div class="all-forcuset mt-4">
