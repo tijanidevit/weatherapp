@@ -94,7 +94,7 @@
             <div class="d-non mt-5" id="result">
                 <div class="content-sec-wh">
                     <h1> Daily Forecast </h1>
-                    <div class="row weekly-div mt-4" id="daily">
+                    <div class="row weekly-div mt-4" id="dailyPeriodic">
                 </div>
             </div>
         </div>

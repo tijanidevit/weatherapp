@@ -202,40 +202,25 @@ async function getIndexHistoryForecast() {
   var city = $("#city").val();
   data = await getHistoryWeatherData(city, startdate, enddate);
 
-  $("#nextDays").remove();
-  $("#nextDaysArea").append('<canvas id="nextDays" height="100"><canvas>');
   days = data.days;
   chartDays = [];
   chartTemperatures = [];
   days.map((day) => {
-    chartDays.push(day.datetime);
-    chartTemperatures.push(convertFtoC(day.tempmax));
+    $("#dailyPeriodic").append(
+      `<div class="col-md-3 mb-2">
+        <div class="comon-days card bg-whit">
+            <h6> ${getDate(day.datetime)} </h6>
+            
+            <h6> ${convertFtoC(day.tempmax)} &deg; c </h6>
+            <small> ${day.conditions}</small>
+            <small>Sunrise: ${tConvert(day.sunrise)}</small>
+            <small>Sunset: ${tConvert(day.sunset)} </small>
+        </div>
+      </div>`
+    );
   });
 
   getOtherData(data);
-
-  const nextDay = document.getElementById("nextDays");
-  const nextDayV = new Chart(nextDay, {
-    type: "line",
-    data: {
-      labels: chartDays,
-      datasets: [
-        {
-          label: "Days Temperature",
-          data: chartTemperatures,
-          borderColor: ["red"],
-          borderWidth: 3,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
 }
 
 $("#forcastBtn").click(function () {
