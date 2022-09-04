@@ -165,3 +165,79 @@ $(".SelectLoc").change(function () {
 
   // $("#spinner").addClass("d-none");
 });
+
+const getHistoryWeatherData = async (city, startdate, enddate) => {
+  let url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city},ng/${startdate}/${enddate}?key=YBR5N9W7TVSMR37ZXF8LRNQLB`;
+
+  data = $.ajax({
+    url: url,
+    type: "get",
+    data: {},
+    beforeSend: function () {
+      $("#result").addClass("d-none");
+    },
+    success: function (data) {
+      return data;
+    },
+    complete: function () {
+      $("#result").removeClass("d-none");
+    },
+  });
+
+  return data;
+};
+
+function convertFtoC(f) {
+  return Math.ceil((f - 32) / 1.8);
+}
+
+function getOtherData(data) {
+  $("#resolvedAddress").text(data.resolvedAddress);
+  $("#description").text(data.description);
+}
+
+async function getIndexHistoryForecast() {
+  var startdate = $("#startdate").val();
+  var enddate = $("#enddate").val();
+  var city = $("#city").val();
+  data = await getHistoryWeatherData(city, startdate, enddate);
+
+  $("#nextDays").remove();
+  $("#nextDaysArea").append('<canvas id="nextDays" height="100"><canvas>');
+  days = data.days;
+  chartDays = [];
+  chartTemperatures = [];
+  days.map((day) => {
+    chartDays.push(day.datetime);
+    chartTemperatures.push(convertFtoC(day.tempmax));
+  });
+
+  getOtherData(data);
+
+  const nextDay = document.getElementById("nextDays");
+  const nextDayV = new Chart(nextDay, {
+    type: "line",
+    data: {
+      labels: chartDays,
+      datasets: [
+        {
+          label: "Days Temperature",
+          data: chartTemperatures,
+          borderColor: ["red"],
+          borderWidth: 3,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+}
+
+$("#forcastBtn").click(function () {
+  getIndexHistoryForecast();
+});

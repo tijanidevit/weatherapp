@@ -36,7 +36,7 @@
                 <h1 class="m-0"> Location Current Forecast
                 </h1>
                 <nav aria-label="breadcrumb m-0">
-                    <p>Select a city/town to get there current days forecasts</p>
+                    <p>Select a city/town to get their current days forecasts</p>
                 </nav>
            </div>
       </div>

@@ -94,6 +94,7 @@
       type: "get",
       data: {},
       success: function (data) {
+        console.log("data :>> ", data);
         hideSelectAndShowResult();
         getDaysData(data);
         getOtherData(data);

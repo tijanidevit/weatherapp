@@ -5,6 +5,7 @@
 <script src="https://unpkg.com/aos%402.3.0/dist/aos.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/weather.js"></script>
+<script src="js/chart.js"></script>
 
 <script>
     AOS.init({
