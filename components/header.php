@@ -16,7 +16,7 @@
                 <a class="nav-link" href="./">Home</a>
               </li>
                <li class="nav-item">
-                 <a class="nav-link" href="current">Cuurent Forecast</a>
+                 <a class="nav-link" href="current">Current Forecast</a>
                </li>
                
                <li class="nav-item">
@@ -74,7 +74,7 @@
                   <a href="./"> Home </a>
                </li>
                <li>
-                  <a href="current"> Cuurent Forecast </a>
+                  <a href="current"> Current Forecast </a>
                </li>
                
                <li>
