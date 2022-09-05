@@ -1,4 +1,5 @@
 <?php
+  session_start();
   if (isset( $_SESSION['weather_user'])) {
     $code = $_SESSION['weather_user']['location_code'];
   }

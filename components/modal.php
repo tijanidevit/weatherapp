@@ -13,25 +13,52 @@
           <button type="button" class="close" data-bs-dismiss="modal">
            <span aria-hidden="true">×</span>
          </button>
+          
+
+         <form action="" id="loginForm" method="post">
           <div class="login-modal-pn">
+
           
-           <div class="cm-select-login mt-3">
-             <div class="country-dp">
-               
-               <input type="email" class="form-control" placeholder="Username Or Email"/>
-             </div>
-             <div class="phone-div">
-               
-                <input type="password" class="form-control" placeholder="Password"/>
-             </div>
-             
+            <div class="cm-select-login mt-3" id="logResult">
+            </div>
+            
+            <div class="cm-select-login mt-3">
+              <div class="country-dp">
+                
+                <input required type="email" name="email" class="form-control" placeholder="Username Or Email"/>
+              </div>
+              <div class="phone-div">
+                
+                <input required type="password" name="password" class="form-control" placeholder="Password"/>
+              </div>
+              
           
-           </div>
-           
-           
-           
-           <button class="btn continue-bn"> <i class="fas fa-lock"></i> SIGN IN </button>
-         </div>
+            </div>
+            
+            
+            
+            <button class="btn continue-bn"> <i class="fas fa-lock"></i> 
+            <span class="spinner d-none" id="logSpinner">
+                  <span
+                      class="spinner-grow spinner-grow-sm"
+                      role="status"
+                      aria-hidden="true"
+                  ></span>
+                  <span
+                      class="spinner-grow spinner-grow-sm"
+                      role="status"
+                      aria-hidden="true"
+                  ></span>
+                  <span
+                      class="spinner-grow spinner-grow-sm"
+                      role="status"
+                      aria-hidden="true"
+                  ></span>
+              </span>
+              SIGN IN 
+            </button>
+          </div>
+         </form>
 
          <p class="text-center  mt-3">  
           <a data-bs-toggle="modal" class="regster-bn" data-bs-target="#lostpsModal" data-bs-dismiss="modal"> Lost Password ? </a>  </p>
@@ -69,6 +96,11 @@
                 <span aria-hidden="true">×</span>
               </button>
               <div class="login-modal-pn">
+
+              
+              <div class="cm-select-login mt-3" id="regResult">
+                
+              </div>
               
               <div class="cm-select-login mt-3">
                 <div class="country-dp">
@@ -81,8 +113,8 @@
                 </div>
                 <div class="phone-div">
                   <label for="">Your primary city/state</label>
-                  <select class="form-control" name="location_code">
-                    <option value="" selected="">Select a city</option>
+                  <select class="form-control" required name="location_code">
+                    <option value="" selected="" disabled>Select a city</option>
                     <option value="100891">Aba</option>
                     <option value="100892">Abak</option>
                     <option value="100893">Abakaliki</option>
@@ -534,30 +566,32 @@
                 </div>              
               </div>
               
-              <button class="btn continue-bn">
-                <span class="spinner" id="spinner">
-                    <span
-                        class="spinner-grow spinner-grow-lg"
-                        role="status"
-                        aria-hidden="true"
-                    ></span>
-                    <span
-                        class="spinner-grow spinner-grow-lg"
-                        role="status"
-                        aria-hidden="true"
-                    ></span>
-                    <span
-                        class="spinner-grow spinner-grow-lg"
-                        role="status"
-                        aria-hidden="true"
-                    ></span>
-                </span>
-              Register </button>
+                <button class="btn continue-bn">
+                  <span class="spinner d-none" id="regSpinner">
+                      <span
+                          class="spinner-grow spinner-grow-sm"
+                          role="status"
+                          aria-hidden="true"
+                      ></span>
+                      <span
+                          class="spinner-grow spinner-grow-sm"
+                          role="status"
+                          aria-hidden="true"
+                      ></span>
+                      <span
+                          class="spinner-grow spinner-grow-sm"
+                          role="status"
+                          aria-hidden="true"
+                      ></span>
+                  </span>
+                  Register 
+                </button>
               </form>
             </div>
 
               <p class="text-center  mt-3"> Already have an account? 
-                <a data-bs-toggle="modal" class="regster-bn" data-bs-target="#loginModal" data-bs-dismiss="modal"> Login </a>  </p>
+                <a data-bs-toggle="modal" class="regster-bn" data-bs-target="#loginModal" data-bs-dismiss="modal"> Login </a>  
+              </p>
             
           </div>
          

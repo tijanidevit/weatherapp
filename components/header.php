@@ -31,7 +31,11 @@
            <div class="right-menu-sec col-lg-1">
             <ul class="list-unstyled d-flex m-0 align-items-center justify-content-end">
               <li class="d-none d-md-block ">
-                <a data-bs-toggle="modal" data-bs-target="#loginModal" class="btn login-btn"> Login </a>
+                <?php if(! isset($_SESSION['weather_user'])): ?>
+                  <a data-bs-toggle="modal" data-bs-target="#loginModal" class="btn login-btn"> Login </a>
+                <?php else : ?>
+                  <a href="logout" class="btn login-btn"> Logout </a>
+                <?php endif ?>
               </li>    
             </ul>
           </div>
