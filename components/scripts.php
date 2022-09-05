@@ -6,6 +6,7 @@
 <script src="js/custom.js"></script>
 <script src="js/weather.js"></script>
 <script src="js/chart.js"></script>
+<script src="js/auth.js"></script>
 
 <script>
     AOS.init({
