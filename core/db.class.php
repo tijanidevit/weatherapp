@@ -1,9 +1,18 @@
 <?php
     class DB {
-        public $host = 'localhost';
-        public $dbname = 'aircast';
-        public $password = '';
-        public $username = 'root';
+        // mysql://bf104cf25a5a68:19b2d5eb@eu-cdbr-west-03.cleardb.net/heroku_a7e7b7a1a474428?reconnect=true
+
+        
+        // public $host = 'localhost';
+        // public $dbname = 'aircast';
+        // public $password = '';
+        // public $username = 'root';
+
+        
+        public $host = 'eu-cdbr-west-03.cleardb.net';
+        public $dbname = 'heroku_a7e7b7a1a474428';
+        public $password = 'bf104cf25a5a68';
+        public $username = '19b2d5eb';
         
         public $conn;
 
