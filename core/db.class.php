@@ -11,8 +11,8 @@
         
         public $host = 'eu-cdbr-west-03.cleardb.net';
         public $dbname = 'heroku_a7e7b7a1a474428';
-        public $password = 'bf104cf25a5a68';
-        public $username = '19b2d5eb';
+        public $password = '19b2d5eb';
+        public $username = 'bf104cf25a5a68';
         
         public $conn;
 
