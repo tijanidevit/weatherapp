@@ -59,7 +59,7 @@
                     <div class="date-m ms-lg-auto d-table">
                       <h3>  
                         <i class="fas fa-map-marker-alt"></i> 
-                        <span class="location">Lagos</span> 
+                        <span class="location">Ilaro</span> 
                         <span class="d-block dateToday"> September 18, 2022</span>
                       </h3>
                     </div>
@@ -118,7 +118,7 @@
                           <h2 class="currentTemp"></h2>
                           <div class="d-flex justify-content-between">
                             
-                        <span class="location">Lagos</span> 
+                        <span class="location">Ilaro</span> 
                         <span class="dateToday"> September 18, 2022</span>
                           </div>
                           <hr />

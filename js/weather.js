@@ -76,9 +76,9 @@ function tConvert(time) {
   return time.join(""); // return adjusted time or original string
 }
 
-async function getIndexTodayForecast(code = 101170) {
+async function getIndexTodayForecast(code = 101106) {
   if (code == "" || code == null) {
-    data = await getCurrentWeatherData(101170);
+    data = await getCurrentWeatherData(101106);
   } else {
     data = await getCurrentWeatherData(code);
   }
@@ -205,6 +205,7 @@ async function getIndexHistoryForecast() {
   days = data.days;
   chartDays = [];
   chartTemperatures = [];
+  $("#dailyPeriodic").empty();
   days.map((day) => {
     $("#dailyPeriodic").append(
       `<div class="col-md-3 mb-2">
